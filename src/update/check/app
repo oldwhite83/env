@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+require __DIR__ . '/vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+
+$application = new Application();
+
+foreach (glob(__DIR__ . '/commands/*.php') as $command) {
+    $command = 'Commands\\' . mb_substr(pathinfo($command, PATHINFO_BASENAME), 0, -4);
+    $application->add(new $command);
+}
+
+$application->run();
