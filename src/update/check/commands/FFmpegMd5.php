@@ -16,7 +16,8 @@ class FFmpegMd5 extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $md5 = md5_file('https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz.md5');
+        $content = trim(file_get_contents('https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz.md5'));
+        $md5 = explode(' ', $content)[0];
 
         $output->writeln($md5);
     }
