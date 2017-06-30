@@ -9,6 +9,8 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 BASE_PATH=$(pwd)
+# 配置
+source ./env.sh
 # 系统配置
 source ./src/system_setting.sh
 # 升级系统
