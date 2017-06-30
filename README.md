@@ -18,7 +18,7 @@ yum update
 ### 3.克隆代码
 ```
 git clone xxx
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 ```
 
 ### 4.安装
