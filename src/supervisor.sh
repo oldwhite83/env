@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
-python "$BASE_PATH"/source/get-pip.py
+# python "$BASE_PATH"/source/get-pip.py
 
-easy_install supervisor
+cd "$BASE_PATH"/source/meld3/
+python setup.py install
+cd "$BASE_PATH"/source/supervisor/
+python setup.py install
 
 if [[ ! -f /etc/supervisord.conf ]]; then
     cp "$BASE_PATH"/ini/supervisor/supervisord.conf /etc/supervisord.conf
