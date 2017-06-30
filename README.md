@@ -17,7 +17,8 @@ yum update
 
 ### 3.克隆代码
 ```
-git clone https://git.3bigking.com/timjuly/environment.git
+git clone xxx
+git submodule update --init --recursive
 ```
 
 ### 4.安装
