@@ -18,11 +18,11 @@ yum update
 ### 3.克隆代码
 ```
 git clone xxx
+cd environment
 git submodule update --init --recursive --remote
 ```
 
 ### 4.安装
 ```
-cd environment
 ./nginx_php.sh
 ```
