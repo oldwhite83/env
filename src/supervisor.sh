@@ -16,3 +16,5 @@ if [[ ! -f /usr/lib/systemd/system/supervisor.service ]]; then
     cp "$BASE_PATH"/ini/supervisor/supervisor.service /usr/lib/systemd/system/supervisor.service
     systemctl enable supervisor
 fi
+
+systemctl restart supervisor

@@ -22,6 +22,10 @@ source ./src/update/php_redis.sh
 source ./src/update/composer.sh
 echo ""
 
+echo "===Redis==="
+source ./src/update/redis.sh
+echo ""
+
 echo "===Nodejs==="
 source ./src/update/nodejs.sh
 echo ""
