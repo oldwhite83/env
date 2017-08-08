@@ -13,5 +13,7 @@ BASE_PATH=$(pwd)
 source ./src/soft_version.sh
 # 加速编译
 source ./src/makeheader.sh
-# 安装 NodeJS
+# 用户
+id -u redis &>/dev/null || useradd redis
+# 安装 Redis
 cd "$BASE_PATH" && source ./src/redis.sh && test_redis

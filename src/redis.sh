@@ -36,6 +36,7 @@ redis_build() {
 redis_configuration() {
     if [[ ! -d /var/run/redis ]]; then
         mkdir -p /var/run/redis
+        chown redis.redis /var/run/redis
     fi
 
     if [[ ! -f /etc/redis.conf ]]; then
