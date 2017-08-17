@@ -13,7 +13,14 @@ BASE_PATH=$(pwd)
 source ./src/soft_version.sh
 # 加速编译
 source ./src/makeheader.sh
+
 # 用户
-id -u redis &>/dev/null || useradd redis
+id -u redis &>/dev/null || useradd -s /sbin/nologin redis
+# 目录
+if [[ ! -d /data/redis ]]; then
+    mkdir -p /data/redis
+    chown redis.redis -R /data/redis
+fi
+
 # 安装 Redis
 cd "$BASE_PATH" && source ./src/redis.sh && test_redis

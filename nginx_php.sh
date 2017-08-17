@@ -19,6 +19,15 @@ source ./src/system_update.sh
 source ./src/soft_version.sh
 # 加速编译
 source ./src/makeheader.sh
+
+# 用户
+id -u www &>/dev/null || useradd www
+# 目录
+if [[ ! -d /data/wwwroot ]]; then
+    mkdir -p /data/wwwroot
+    chown www.www -R /data/wwwroot
+fi
+
 # 安装 Nginx
 cd "$BASE_PATH" && source ./src/nginx.sh && test_nginx
 # 安装 PHP
