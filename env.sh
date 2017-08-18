@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-NO_INTERNET=false
+SETUP_PATH='/svr-setup'
+
+ZONEINFO=Asia/Shanghai
+
+# NO_INTERNET=false

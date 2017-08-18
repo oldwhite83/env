@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 BASE_PATH=$(pwd)
+
 CHECK_APP="$BASE_PATH/src/update/check/app"
 
 source ./src/soft_version.sh
