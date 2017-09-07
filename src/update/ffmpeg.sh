@@ -7,8 +7,8 @@ LATEST_FFMPEG_MD5=$($CHECK_APP md5:ffmpeg)
     echo "获取 FFmpeg MD5 错误"
     return 1
 ) \
-&& if [ "$FFMPEG_MD5" == "$LATEST_FFMPEG_MD5" ]; then
-    echo "当前 FFmpeg 无需更新"
-else
-    wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O "$BASE_PATH"/source/ffmpeg-release-64bit-static.tar.xz
-fi
+    && if [ "$FFMPEG_MD5" == "$LATEST_FFMPEG_MD5" ]; then
+        echo "当前 FFmpeg 无需更新"
+    else
+        wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-64bit-static.tar.xz -O "$BASE_PATH"/source/ffmpeg-release-64bit-static.tar.xz
+    fi

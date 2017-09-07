@@ -168,7 +168,7 @@ install_libmcrypt() {
 
 install_imap_from_yum() {
     if [[ $(
-        rpm -q uw-imap-devel > /dev/null 2>&1
+        rpm -q uw-imap-devel >/dev/null 2>&1
         echo $?
     ) != '0' ]]; then
         time yum -y install uw-imap-devel || return 1

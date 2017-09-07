@@ -32,7 +32,6 @@ redis_build() {
     make install
 }
 
-
 redis_configuration() {
     if [[ ! -d /var/run/redis ]]; then
         mkdir -p /var/run/redis
