@@ -11,6 +11,7 @@ LATEST_PHP_IMAGICK_VERSION=$($CHECK_APP version:php_imagick)
     else
         echo "更新 PHP_IMAGICK" "$LATEST_PHP_IMAGICK_VERSION"
         find "$BASE_PATH"/source/php-extension/ -name 'imagick*.tar.gz' -delete
+        mkdir -p "$BASE_PATH/source/php-extension"
         wget "https://pecl.php.net/get/imagick-$LATEST_PHP_IMAGICK_VERSION.tgz" -O "$BASE_PATH/source/php-extension/imagick-$LATEST_PHP_IMAGICK_VERSION.tgz"
         sed -i "s/PHP_IMAGICK_VERSION.*/PHP_IMAGICK_VERSION=${LATEST_PHP_IMAGICK_VERSION}/g" "$BASE_PATH"/src/soft_version.sh
     fi
