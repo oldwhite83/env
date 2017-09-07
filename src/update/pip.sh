@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-GETPIP_MD5=$(md5sum "$BASE_PATH"/source/get-pip.py | awk -F ' ' '{print $1}')
+GETPIP_MD5=$(md5sum "$BASE_PATH"/source/get-pip.py 2>&1 | awk -F ' ' '{print $1}')
 LATEST_GETPIP_MD5=$($CHECK_APP md5:getpip)
 
 [[ $LATEST_GETPIP_MD5 =~ ^[a-zA-Z0-9]{32}$ ]] || (

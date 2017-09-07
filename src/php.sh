@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CURRENT_PHP_VERSION=$(php -v | awk -F ' ' '{print $2}' | head -n1)
+CURRENT_PHP_VERSION=$(php -v 2>&1 | awk -F ' ' '{print $2}' | head -n1)
 CONFIGSCANDIR=/etc/php.d
 
 test_php() {
@@ -254,8 +254,8 @@ install_imagick() {
 }
 
 php_install_composer() {
-    CURRENT_COMPOSER_VERSION=$(composer -V 2>/dev/null | awk -F ' ' '{print $3}' | head -n1)
-    COMPOSER_VERSION=$(php "$BASE_PATH"/source/composer.phar -V 2>/dev/null | awk -F ' ' '{print $3}' | head -n1)
+    CURRENT_COMPOSER_VERSION=$(composer -V 2>&1 | awk -F ' ' '{print $3}' | head -n1)
+    COMPOSER_VERSION=$(php "$BASE_PATH"/source/composer.phar -V 2>&1 | awk -F ' ' '{print $3}' | head -n1)
 
     if [[ "$CURRENT_COMPOSER_VERSION" == "$COMPOSER_VERSION" ]]; then
         composer -V 2>/dev/null

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COMPOSER_MD5=$(md5sum "$BASE_PATH"/source/composer.phar | awk -F ' ' '{print $1}')
+COMPOSER_MD5=$(md5sum "$BASE_PATH"/source/composer.phar 2>&1 | awk -F ' ' '{print $1}')
 LATEST_COMPOSER_MD5=$($CHECK_APP md5:composer)
 
 [[ $LATEST_COMPOSER_MD5 =~ ^[a-zA-Z0-9]{32}$ ]] || (

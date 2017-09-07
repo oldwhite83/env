@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FFMPEG_MD5=$(md5sum "$BASE_PATH"/source/ffmpeg-release-64bit-static.tar.xz | awk -F ' ' '{print $1}')
+FFMPEG_MD5=$(md5sum "$BASE_PATH"/source/ffmpeg-release-64bit-static.tar.xz 2>&1 | awk -F ' ' '{print $1}')
 LATEST_FFMPEG_MD5=$($CHECK_APP md5:ffmpeg)
 
 [[ $LATEST_FFMPEG_MD5 =~ ^[a-zA-Z0-9]{32}$ ]] || (

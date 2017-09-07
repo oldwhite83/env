@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CURRENT_REDIS_VERSION=$(redis-cli -v | awk -F ' ' '{print $2}' | head -n1)
+CURRENT_REDIS_VERSION=$(redis-cli -v 2>&1 | awk -F ' ' '{print $2}' | head -n1)
 
 test_redis() {
     if [ "$CURRENT_REDIS_VERSION" == "$REDIS_VERSION" ]; then
