@@ -162,6 +162,7 @@ install_libmcrypt() {
     cd "$SETUP_PATH"/libmcrypt-"$LIBMCRYPT_VERSION"
     make install
 
+    rm -rf /usr/lib64/libmcrypt.so.4
     ln -s /usr/local/lib/libmcrypt.so.4 /usr/lib64/
 }
 
