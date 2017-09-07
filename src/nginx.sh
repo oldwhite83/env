@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CURRENT_NGINX_VERSION=$(nginx -v 2>&1 | awk -F ': ' '{print $2}' | tr '/' '-' | head -n1)
+CURRENT_NGINX_VERSION=$(nginx -v 2>&1 | awk -F '/' '{print $2}' | head -n1)
 
 test_nginx() {
     if [ "$CURRENT_NGINX_VERSION" == "$NGINX_VERSION" ]; then
